@@ -1,11 +1,12 @@
 'use strict';
-const BigImage = document.querySelector('#largeImg');
-const Thumbs = document.querySelector('thumbs');
-Thumbs.addEventListener(click, (e) => 
-const link = e.target.closest('a'));
 
-if (!link) return
+const bigI = document.querySelector('#largeImg');
+const small = document.querySelectorAll('.gallery__img');
 
-e.PreventDefault();
-
-BigImage.src = link.href;
+small.forEach((img) => {
+  img.addEventListener('click', () => {
+    if (bigI) {
+      bigI.src = img.src;
+    }
+  });
+});
